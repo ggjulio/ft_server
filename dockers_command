@@ -1,0 +1,12 @@
+docker ps
+docker image -a
+docker system prune
+sudo docker build -t [name] [path to dockerfile] 
+sudo docker run -p 80 -d test
+docker stop [id]
+
+
+
+
+
+ENTRYPOINT OR CMD ? CMD can be overwritten when running container, so better use ENTRYPOINT if it should be always running.
