@@ -10,12 +10,15 @@ docker stop [id]
 
 
 ENTRYPOINT OR CMD ? CMD can be overwritten when running container, so better use ENTRYPOINT if it should be always running.
-
+////////
 Notes maison :
 
 - sudo systemctl status nginx			#to know status of the service
 
 
+docker exec musing_carson ps aux
+
+//////
 steps :
 
 apt get update, upgrade
