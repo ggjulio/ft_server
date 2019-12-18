@@ -50,8 +50,8 @@ sudo chown -R www-data: /var/www/html/demo-wp.com		#allow webserver complete acc
 #install phpmyadmin
   #wget https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz
 
-mkdir -p /etc/nginx/phpmyadmin
-wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /etc/nginx/phpmyadmin
+mkdir -p /var/html/phpmyadmin
+wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /var/html/phpmyadmin
 
 
 #configure nginx for wordpress
