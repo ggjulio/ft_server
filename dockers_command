@@ -38,20 +38,21 @@ EXIT;
 
 #install wordpress
 
-sudo mkdir -p /var/www/html/demo_wp.com				#create Dir to dl wordpress archive
+mkdir -p /var/www/html/demo-wp.com				#create Dir to dl wordpress archive
+
 cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar xf latest.tar.gz
-sudo mv /tmp/wordpress/* /var/www/html/demo_wp.com/ 
-sudo chown -R www-data: /var/www/html/demo_wp.com		#allow webserver complete access
+sudo mv /tmp/wordpress/* /var/www/html/demo-wp.com/ 
+sudo chown -R www-data: /var/www/html/demo-wp.com		#allow webserver complete access
 
 
 #install phpmyadmin
+  #wget https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz
 
-sudo mkdir -p /var/www/html/demo_wp.com				#create Dir to dl wordpress archive
-wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /etc/nginx/
+mkdir -p /etc/nginx/phpmyadmin
+wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /etc/nginx/phpmyadmin
 
-wget https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz
 
 #configure nginx for wordpress
 
