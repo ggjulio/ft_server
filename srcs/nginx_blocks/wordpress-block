@@ -1,14 +1,14 @@
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80 default_server;					#to listen on 80 in ipv4
+    listen [::]:80 default_server; 				#to listen on 80 in ipv6
 
-    root /var/www/html;
+    root /var/www/;
     index index.php index.html index.htm index.nginx-debian.html;
 
-    server_name server_domain_or_IP;
+#    server_name _;
 
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ =404;				# to show 404 error if a file doesn't exist
     }
 
     location ~ \.php$ {
