@@ -3,18 +3,21 @@ server {
     listen [::]:80 default_server; #to listen on 80 in ipv6
 
     root /var/www;
-    index index.php index.html index.htm index.nginx-debian.html;
+    index index.php index.html index.htm;
 
     server_name localhost;
 
-    location = / {
+    location / {
+        autoindex on;
+    }
+
+    location /wordpress {
         alias  /var/www/wordpress;
     }
 
-    location /phpmyadmin {
+    location  /phpmyadmin {
         alias  /var/www/phpmyadmin;
     }
-
 
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
@@ -22,6 +25,6 @@ server {
     }
 
     location ~ /\.ht {
-	deny all;
+        deny all;
     }
 }
