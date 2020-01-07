@@ -2,23 +2,17 @@ docker ps
 docker image -a
 docker system prune
 sudo docker build -t [name] [path to dockerfile] 
-sudo docker run -p 80 -d test
+sudo docker -it run -p 80 test
 docker stop [id]
-
+docker exec musing_carson ps aux
 
 
 
 
 ENTRYPOINT OR CMD ? CMD can be overwritten when running container, so better use ENTRYPOINT if it should be always running.
-////////
-Notes maison :
-
-- sudo systemctl status nginx			#to know status of the service
 
 
-docker exec musing_carson ps aux
-
-//////
+///////////////////////////////////////////////////////
 steps :
 
 apt get update, upgrade
@@ -40,14 +34,14 @@ EXIT;
 #########  install wordpress
 
 wget -c https://wordpress.org/latest.tar.gz -O - | tar -xz -C /var/www
-mv latest wordpress
+#mv latest wordpress
 sudo chown -R www-data: /var/www/wordpress		#allow webserver complete access
 
 
 #######  install phpmyadmin
 
 wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /var/www/html
-mv phpMyAdmin-4.9.2-english phpmyadmin
+#mv phpMyAdmin-4.9.2-english phpmyadmin
 
 
 
