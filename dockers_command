@@ -1,8 +1,8 @@
 docker ps
 docker image -a
 docker system prune
-sudo docker build -t [name] [path to dockerfile] 
-sudo docker -it run -p 80 test
+docker build -t [name] [path to dockerfile] 
+docker run -ti -p 80 test
 docker stop [id]
 docker exec musing_carson ps aux
 
@@ -26,8 +26,8 @@ systemctl start nginx php7.3-fpm
 
 mysql -u root -p
 
-CREATE DATABASE WordPress CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-GRANT ALL ON WordPress.* TO WordPressUser @'localhost' IDENTIFIED BY 'your password';
+CREATE DATABASE wordpress CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+GRANT ALL ON wordpress.* TO wordpressuser @'localhost' IDENTIFIED BY 'wordpress';
 FLUSH PRIVILEGES;
 EXIT;
 
