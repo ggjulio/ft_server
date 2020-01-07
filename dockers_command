@@ -31,7 +31,7 @@ GRANT ALL ON wordpress.* TO wordpressuser @'localhost' IDENTIFIED BY 'wordpress'
 FLUSH PRIVILEGES;
 EXIT;
 -- For Phpmyadmin
-CREATE USER 'phpadmin'@'localhost' IDENTIFIED BY 'mypassword';
+CREATE USER phpadmin @'localhost' IDENTIFIED BY 'phpadmin';
 GRANT ALL PRIVILEGES ON *.* TO 'phpadmin'@'localhost' WITH GRANT OPTION;
 EXIT;
 
@@ -70,3 +70,4 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmy
 https://beauvais.me/creer-serveur-web-nginx-php7-maria-db-mysql-debian-9-stretch/
 https://mondedie.fr/d/9343-Comment-bien-configurer-les-location-nginx
 https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
+https://www.howtoforge.com/tutorial/how-to-install-phpmyadmin-with-nginx-on-ubuntu-1804/

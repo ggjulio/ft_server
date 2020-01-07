@@ -24,4 +24,6 @@ rm /etc/nginx/sites-enabled/default
 service php7.3-fpm restart
 service nginx restart
 
+mysql < srcs_docker/create_db.sql
+
 /bin/sh

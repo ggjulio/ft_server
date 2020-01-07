@@ -4,6 +4,5 @@ GRANT ALL ON wordpress.* TO wordpressuser @'localhost' IDENTIFIED BY 'wordpress'
 FLUSH PRIVILEGES;
 
 -- For Phpmyadmin
-CREATE USER 'phpadmin'@'localhost' IDENTIFIED BY 'mypassword';
-GRANT ALL PRIVILEGES ON *.* TO 'phpadmin'@'localhost' WITH GRANT OPTION;
-EXIT;
+CREATE USER phpadmin @'localhost' IDENTIFIED BY 'phpadmin';
+GRANT ALL PRIVILEGES ON *.* TO  phpadmin @'localhost' WITH GRANT OPTION;
