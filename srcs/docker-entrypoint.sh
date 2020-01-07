@@ -24,8 +24,4 @@ rm /etc/nginx/sites-enabled/default
 service php7.3-fpm restart
 service nginx restart
 
-
-#ln -s /etc/nginx/sites-available/wordpress  /etc/nginx/sites-enabled/wordpress
-#ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin
-
 /bin/sh

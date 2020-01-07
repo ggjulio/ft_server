@@ -13,6 +13,7 @@ ENTRYPOINT OR CMD ? CMD can be overwritten when running container, so better use
 
 
 ///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 steps :
 
 apt get update, upgrade
@@ -21,8 +22,6 @@ apt install default-mysql-server
 sudo apt install php7.3-fpm php7.3-mysql 
 
 systemctl start nginx php7.3-fpm
-
-####### database
 
 mysql -u root -p
 
@@ -36,26 +35,16 @@ CREATE USER 'phpadmin'@'localhost' IDENTIFIED BY 'mypassword';
 GRANT ALL PRIVILEGES ON *.* TO 'phpadmin'@'localhost' WITH GRANT OPTION;
 EXIT;
 
-#########  install wordpress
-
+####################  install wordpress
 wget -c https://wordpress.org/latest.tar.gz -O - | tar -xz -C /var/www
-#mv latest wordpress
-sudo chown -R www-data: /var/www/wordpress		#allow webserver complete access
+# sudo chown -R www-data: /var/www/wordpress		#allow webserver complete access
 
-
-#######  install phpmyadmin
-
+####################  install phpmyadmin
 wget -c https://files.phpmyadmin.net/phpMyAdmin/4.9.2/phpMyAdmin-4.9.2-english.tar.gz -O - | tar -xz -C /var/www/html
-#mv phpMyAdmin-4.9.2-english phpmyadmin
-
-
-
-
-systemctl restart php7.0-fpm
+services nginx php7.3-fpm restart
 
 ######  configure nginx for wordpress and phpmyadmin
 
-COPY srcs/nginx_blocks /etc/nginx/sites-available/
 
 ln -s /etc/nginx/sites-available/wordpress  /etc/nginx/sites-enabled/wordpress
 ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin
