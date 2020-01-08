@@ -4,7 +4,7 @@ server {
     listen [::]:80 default_server; #to listen on 80 in ipv6
     listen [::]:443 ssl;
 
-    ssl off;
+    ssl on;
     ssl_certificate      /etc/ssl/certs/nginx-selfsigned.crt;
     ssl_certificate_key  /etc/ssl/private/nginx-selfsigned.key;
     ssl_protocols        SSLv3 TLSv1;
