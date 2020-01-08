@@ -2,7 +2,8 @@ docker ps
 docker image -a
 docker system prune
 docker build -t [name] [path to dockerfile] 
-docker run -ti -p 80 test
+docker run -ti -p 80:80 test
+docker run -ti -p 80:80 -p 443:443 test
 docker stop [id]
 docker exec musing_carson ps aux
 

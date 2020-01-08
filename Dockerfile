@@ -11,5 +11,6 @@ COPY ./srcs/* srcs_docker/
 # WORKDIR /usr/local/nginx/html/
 
 EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["srcs_docker/docker-entrypoint.sh"]
