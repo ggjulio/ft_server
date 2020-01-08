@@ -1,10 +1,16 @@
 server {
-    listen 80 default_server;   #to listen on 80 in ipv4
+    listen 80;   #to listen on 80 in ipv4
+    listen 443 default ssl;
     listen [::]:80 default_server; #to listen on 80 in ipv6
-    listen 443 ssl;
     listen [::]:443 ssl;
-    include snippets/self-signed.conf;
-    include snippets/ssl-params.conf;
+
+    ssl off;
+    ssl_certificate      /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key  /etc/ssl/private/nginx-selfsigned.key;
+    ssl_protocols        SSLv3 TLSv1;
+    ssl_ciphers          HIGH:!aNULL:!MD5;
+
+    error_page		497	https://$server_name:$server_port$request_uri;   #redirect  when 400 code error
 
     root /var/www;
     index index.php index.html index.htm;
