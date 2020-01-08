@@ -10,7 +10,7 @@ server {
     ssl_protocols        SSLv3 TLSv1;
     ssl_ciphers          HIGH:!aNULL:!MD5;
 
-    error_page		497	https://$server_name:$server_port$request_uri;   #redirect  when 400 code error
+    error_page		497	https://$server_name:443$request_uri;   #redirect  when 400 code error
 
     root /var/www;
     index index.php index.html index.htm;
